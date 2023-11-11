@@ -1,7 +1,6 @@
 package business.book;
 
 /*
- * TODO: Create a record constructor with fields corresponding to the fields in the
  * book table of your database.
  */
 
