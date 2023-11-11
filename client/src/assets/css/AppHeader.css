@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+section nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 10px #089da1;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+section nav .logo img {
+    width: 100px;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+section nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section nav li {
+    display: inline-block;
+    font-size: 18px;
+    padding: 0 20px;
+}
+
+section nav li a {
+    text-decoration: none;
+    color: #000;
+}
+
+section nav li a:hover {
+    color: #089da1;
+}
+
+section nav .social_icon {
+    display: flex;
+    align-items: center;
+}
+
+section nav .social_icon i {
+    transition: all 0.3s ease-in-out;
+    margin: 0 10px;
+    font-size: 25px;
+    position: relative;
+}
+
+section nav .social_icon i:hover {
+    color: #089da1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    left: 20px; /* Adjust as needed */
+    display: inline-block;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.search-input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.search-container .social_icon {
+    width: 120px;
+    color: rgba(18, 16, 16, 0.5);
+}
+
+.social_icon {
+    width: 200px;
+    color: rgba(18, 16, 16, 0.5);
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #089da1;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+/* Center the cart count within the shopping cart icon */
+section nav .social_icon .cart-icon {
+    position: relative;
+}
+
+section nav .social_icon .cart-count {
+    position: absolute;
+    top: -23px;
+    right: 2px;
+}
+
+.cart-link {
+    text-decoration: none;
+    color: grey;
+    /* Add more styles as needed */
+}

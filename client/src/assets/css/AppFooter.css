@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    width: 100%;
+    background: #eaeaea;
+    position: fixed;
+    bottom: 0;
+}
+
+footer .footer_main {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer .footer_main .tag {
+    display: inline;
+    color: #000000;
+    margin: 10px 0;
+}
+
+footer .footer_main .tag a {
+    display: inline;
+    color: #089da1;
+    margin: 10px 0;
+}
+
+footer .footer_main .tag a:hover {
+    display: inline;
+    color: #000000;
+    margin: 10px 0;
+}
+
+footer .footer_main .tag .social_link i {
+    position: relative;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+footer .footer_main .tag .social_link i:hover {
+    position: relative;
+    color: #089da1;
+    font-size: 20px;
+    margin: 0 5px;
+}

@@ -1,0 +1,41 @@
+
+.categories_card{
+    background: #cae3e4;
+    border: 1px solid #000000;
+    position: fixed;
+    height: 78%;
+    width: 20%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 180px;
+}
+
+.categories_card h2{
+    color: grey;
+    margin-bottom: 30px;
+    margin-left: 10%;
+    font-size: 30px;
+}
+
+.categories_card a
+{
+    margin-left: 5%;
+    color: #000000;
+    padding: 10px 15px 10px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+}
+
+.categories_card a.active{
+    background: #089da1;
+}
+
+.categories_card a:hover
+{
+    background: #089da1;
+}
+
+

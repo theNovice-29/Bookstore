@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/BBookstoreReactState/static/css/main.56a76ce9.css",
+    "main.js": "/BBookstoreReactState/static/js/main.a9c412ab.js",
+    "static/js/787.c4e7f8f9.chunk.js": "/BBookstoreReactState/static/js/787.c4e7f8f9.chunk.js",
+    "static/media/image_banner.jpg": "/BBookstoreReactState/static/media/image_banner.6d86185ca8bc2743c89c.jpg",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/BBookstoreReactState/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/1015.jpeg": "/BBookstoreReactState/static/media/1015.883df065e4748c13c113.jpeg",
+    "static/media/storelogo.png": "/BBookstoreReactState/static/media/storelogo.2debbd07d8aaca4008d3.png",
+    "static/media/fontawesome-webfont.eot": "/BBookstoreReactState/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/BBookstoreReactState/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/main_banner.png": "/BBookstoreReactState/static/media/main_banner.7aa36f736854e354d2c2.png",
+    "static/media/1006.jpeg": "/BBookstoreReactState/static/media/1006.2ee5ac7ae7e2f53c07f5.jpeg",
+    "static/media/1016.jpeg": "/BBookstoreReactState/static/media/1016.dea5399a8a46cf14e339.jpeg",
+    "static/media/1008.jpeg": "/BBookstoreReactState/static/media/1008.dc59cf06503ead58c668.jpeg",
+    "static/media/1017.jpeg": "/BBookstoreReactState/static/media/1017.456e559419cc8fbc8de1.jpeg",
+    "static/media/1005.jpeg": "/BBookstoreReactState/static/media/1005.e2fffd2cbbb5c0cac97d.jpeg",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/BBookstoreReactState/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/1009.jpeg": "/BBookstoreReactState/static/media/1009.5f3fb71482906fad8d7e.jpeg",
+    "static/media/1001.jpeg": "/BBookstoreReactState/static/media/1001.cb90be4b20a9260f3d41.jpeg",
+    "static/media/1003.jpeg": "/BBookstoreReactState/static/media/1003.b814601a9dc18e50b1d6.jpeg",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/BBookstoreReactState/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/1002.jpeg": "/BBookstoreReactState/static/media/1002.f0acf924c439126427ad.jpeg",
+    "static/media/1007.jpeg": "/BBookstoreReactState/static/media/1007.c0758265ea5f5ae27e91.jpeg",
+    "static/media/1012.jpeg": "/BBookstoreReactState/static/media/1012.367a3743763283b8d397.jpeg",
+    "static/media/1010.jpeg": "/BBookstoreReactState/static/media/1010.0198b8d421ff18f418ae.jpeg",
+    "static/media/1014.jpeg": "/BBookstoreReactState/static/media/1014.4213f86d09b66d2414ce.jpeg",
+    "static/media/1011.jpeg": "/BBookstoreReactState/static/media/1011.b0ad59bbd9b3e0964330.jpeg",
+    "static/media/1004.jpeg": "/BBookstoreReactState/static/media/1004.be5fe955b8e502b14f37.jpeg",
+    "index.html": "/BBookstoreReactState/index.html",
+    "main.56a76ce9.css.map": "/BBookstoreReactState/static/css/main.56a76ce9.css.map",
+    "main.a9c412ab.js.map": "/BBookstoreReactState/static/js/main.a9c412ab.js.map",
+    "787.c4e7f8f9.chunk.js.map": "/BBookstoreReactState/static/js/787.c4e7f8f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.56a76ce9.css",
+    "static/js/main.a9c412ab.js"
+  ]
+}

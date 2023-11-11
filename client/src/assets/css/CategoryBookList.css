@@ -1,0 +1,91 @@
+.categorys{
+    margin-left: 20%;
+    height: 70vh;
+    margin-bottom: 260px;
+}
+.categorys .categorys_box {
+    width: 95%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    display: grid;
+}
+.categorys .categorys_box .categorys_card{
+    margin-top: 45%;
+    margin-bottom: -35%;
+    width: 230px;
+    height: 370px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #919191;
+    display: inline-block;
+}
+.categorys .categorys_box .categorys_card:hover{
+    box-shadow: 0 0 5px #089da1;
+}
+
+.categorys .categorys_box .categorys_card .categorys_image{
+    width: 150px;
+    height: 220px;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.categorys .categorys_box .categorys_card .categorys_image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.3s;
+}
+
+.categorys .categorys_box .categorys_card:hover .categorys_image img{
+    transform: scale(1.1);
+}
+
+.categorys .categorys_box .categorys_card .categorys_tag p{
+    font-family: queen of camelot;
+    font-size: 25px;
+    margin: 8px 0;
+}
+
+.categorys .categorys_box .categorys_card .categorys_tag h6{
+    color: #c36969;
+    font-size: 15px;
+    margin: 8px 0;
+}
+.categorys .categorys_box .categorys_card .categorys_tag h3{
+    color: rgb(216, 25, 25);
+    font-size: 25px;
+    margin: 13px 0;
+}
+
+
+.categorys .categorys_box .categorys_card .categorys_tag .categorys_btn{
+    padding: 8px 20px;
+    border-radius: 25px;
+    background-color: #089da1;
+    text-decoration: none;
+
+    color: #ffffff;
+}
+
+.categorys .categorys_box .categorys_card .categorys_tag .categorys_btn:hover{
+    padding: 8px 20px;
+    border: 2px solid #089da1;
+    background-color: #ffffff;
+
+    border-radius: 25px;
+    text-decoration: none;
+    color: #000;
+}
+
+.social-icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-top: 8%; /* Adjust the top position as needed */
+    left: 46.5%; /* Adjust the right position as needed */
+
+}
