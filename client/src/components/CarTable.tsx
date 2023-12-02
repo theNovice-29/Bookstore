@@ -1,35 +1,36 @@
 import "../assets/css/CartTable.css";
-import React, { useContext } from "react";
-import { CartStore } from "../context/CartContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+import React, {useContext} from "react";
+import {CartStore} from "../context/CartContext";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faMinusCircle, faPlusCircle} from "@fortawesome/free-solid-svg-icons";
+import {Link, useNavigate} from "react-router-dom";
 
 function CartTable() {
-    const { cart, dispatch } = useContext(CartStore);
+    const {cart, dispatch} = useContext(CartStore);
+    const navigate = useNavigate();
 
     const bookImageFileName = (bookId: number) => `${bookId}.jpeg`;
 
     const removeFromCart = (id: number) => {
-        dispatch({ type: 'REMOVE', id });
+        dispatch({type: 'REMOVE', id});
     };
 
     const clearCart = () => {
-        dispatch({ type: 'CLEAR' });
+        dispatch({type: 'CLEAR'});
     };
 
     const decreaseQuantity = (id: number) => {
         const item = cart.find((cartItem) => cartItem.id === id);
 
         if (item && item.quantity > 1) {
-            dispatch({ type: 'DECREASE', id });
+            dispatch({type: 'DECREASE', id});
         } else {
-            dispatch({ type: 'REMOVE', id });
+            dispatch({type: 'REMOVE', id});
         }
     };
 
     const increaseQuantity = (id: number) => {
-        dispatch({ type: 'INCREASE', id });
+        dispatch({type: 'INCREASE', id});
     };
 
     const getItemCountText = () => {
@@ -64,24 +65,26 @@ function CartTable() {
                         {cart.map((cartItem) => (
                             <div className="cart-item" key={cartItem.id}>
                                 <div className="cart-book-image">
-                                    <img src={require(`../assets/images/books/${bookImageFileName(cartItem.id)}`)} alt={cartItem.book.title} />
+                                    <img src={require(`../assets/images/books/${bookImageFileName(cartItem.id)}`)}
+                                         alt={cartItem.book.title}/>
                                 </div>
                                 <div className="cart-book-title">{cartItem.book.title}</div>
                                 <div className="cart-book-price">${cartItem.book.price.toFixed(2)}</div>
                                 <div className="cart-book-quantity">
                                     <button className="icon-button" onClick={() => decreaseQuantity(cartItem.id)}>
-                                        <FontAwesomeIcon icon={faMinusCircle} />
+                                        <FontAwesomeIcon icon={faMinusCircle}/>
                                     </button>
                                     <span>{cartItem.quantity}</span>
                                     <button className="icon-button" onClick={() => increaseQuantity(cartItem.id)}>
-                                        <FontAwesomeIcon icon={faPlusCircle} />
+                                        <FontAwesomeIcon icon={faPlusCircle}/>
                                     </button>
                                 </div>
                                 <div className="cart-book-subtotal">
-                                    ${ (cartItem.book.price * cartItem.quantity).toFixed(2) }
+                                    ${(cartItem.book.price * cartItem.quantity).toFixed(2)}
                                 </div>
                                 <div className="cart-book-remove">
-                                    <button className="icon-button" onClick={() => removeFromCart(cartItem.id)}>x</button>
+                                    <button className="icon-button" onClick={() => removeFromCart(cartItem.id)}>x
+                                    </button>
                                 </div>
                             </div>
                         ))}
@@ -93,13 +96,16 @@ function CartTable() {
                         </div>
 
                         <div className="cart-actions">
-                            <Link to="/categories/Photography" className="button continue-shopping">Continue Shopping</Link>
+                            <button className="button continue-shopping" onClick={() => navigate(-1)}>Continue
+                                Shopping
+                            </button>
                             <Link to="/checkout" className="button checkout">Proceed to Checkout</Link>
                         </div>
                     </div>
                 </React.Fragment>
             ) : (
                 <div className="cart-empty-message">
+                    <img src="../assets/images/site/empty-shopping-cart.png" alt="Empty Cart"/>
                     <p>Your cart is empty. <Link to="/categories/Photography">Start shopping</Link>.</p>
                 </div>
             )}

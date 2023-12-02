@@ -1,6 +1,7 @@
 import React from 'react';
-import CartTable from './CartTable';
+
 import "../assets/css/Cart.css"
+import CartTable from "./CarTable";
 function Cart() {
     return (
         <div className="cart-container">
