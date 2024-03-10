@@ -6,11 +6,12 @@ import AppHeader from "./components/AppHeader";
 import AppFooter from "./components/AppFooter";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
+import ConfirmationPage from "./components/ConfirmationPage";
 
 
 function App() {
     return (
-        <Router basename="/BBookstoreReactSession">
+        <Router basename="/BBookstoreReactTransact">
                 <AppHeader />
                 <Routes>
                     <Route
@@ -25,7 +26,7 @@ function App() {
                     </Route>
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/cart" element={<Cart />} />
-                    <Route path="/confirmation" element={<Cart />} />
+                    <Route path="/confirmation" element={<ConfirmationPage />} />
                     <Route path="*" element={<div>Page Not Found</div>} />
                 </Routes>
                 <AppFooter />

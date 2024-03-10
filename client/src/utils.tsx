@@ -12,9 +12,10 @@ export function asDollarsAndCents(cents: number): string {
 
 // From https://github.com/validatorjs
 const US_MOBILE_PHONE_PATTERN =
-    /^((\+1|1)?( |-)?)?(\([2-9][0-9]{2}\)|[2-9][0-9]{2})( |-)?([2-9][0-9]{2}( |-)?[0-9]{4})$/;
+    /^\d{10}$/;
 
 export function isMobilePhone(input: string): boolean {
+    console.log(input)
     return US_MOBILE_PHONE_PATTERN.test(input);
 }
 

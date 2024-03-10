@@ -11,13 +11,14 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlusCircle} from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 import {faMinusCircle} from "@fortawesome/free-solid-svg-icons/faMinusCircle";
 import {CartStore} from "../context/CartContext";
-import axios from "axios";
 import api from "../services/api";
+import {OrderDetailsStore} from "../context/OrderDetailsContext";
 
 
 function Checkout() {
 
     const bookImageFileName = (bookId: number) => `${bookId}.jpeg`;
+    const orderContext = useContext(OrderDetailsStore);
 
     const decreaseQuantity = (id: number) => {
         const item = cart.find((cartItem) => cartItem.id === id);
@@ -65,19 +66,19 @@ function Checkout() {
         phone: "",
         email: "",
         ccNumber: "",
-        ccExpiryMonth: 0,
-        ccExpiryYear: 0
+        ccExpiryMonth: 1,
+        ccExpiryYear: yearFrom(0)
     });
 
     const [checkoutStatus, setCheckoutStatus] = useState("");
 
     function isValidForm() {
-        //TO DO code that returns true is the customer form is valid, false otherwise
 
         return true;
     }
 
-    // TO DO placeOrder function comes here. Needed for project 9 (not 8)
+
+
 
     function handleInputChange(event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
         const { name, value } = event.target;
@@ -140,9 +141,7 @@ function Checkout() {
 
     async function submitOrder(event:FormEvent) {
         event.preventDefault();
-        console.log("Submit order");
         const isFormCorrect =  isValidForm();
-        console.log(isFormCorrect);
         if (!isFormCorrect) {
             setCheckoutStatus("ERROR");
         } else {
@@ -158,7 +157,9 @@ function Checkout() {
             })
             if(orders) {
                 setCheckoutStatus("OK");
-                navigate('/confirmation');}
+                navigate('/confirmation');
+                orderContext.dispatch({ type: "ORDER_ADD", payload: orders });
+            }
             else{
                 console.log("Error placing order");
             }
@@ -169,7 +170,6 @@ function Checkout() {
 
         const order = { customerForm: customerForm, cart:{itemArray:cart} };
         const orders = JSON.stringify(order);
-        console.log(orders);
         const url = '/orders';
         const orderDetails: OrderDetails = await api.post(url, orders,
             {headers: {
@@ -177,11 +177,9 @@ function Checkout() {
                 }
             })
             .then((response) => {
-                dispatch({type: CartTypes.CLEAR});
                 return response.data;
             })
             .catch((error)=>console.log(error));
-        console.log("order details: ", orderDetails);
         return orderDetails;
     }
 
@@ -358,8 +356,8 @@ function Checkout() {
                 <ul className="checkout-cart-info">
                     {
                         cart?.map((item, i) => (
-                            <div className="checkout-cart-book-item">
-                                <div className="checkout-cart-book-image" key={i}>
+                            <div className="checkout-cart-book-item" key={item.id}>
+                                <div className="checkout-cart-book-image">
                                     <img src={require(`../assets/images/books/${bookImageFileName(item.id)}`)}
                                          alt="title" className="checkout-cart-info-img"
                                     />

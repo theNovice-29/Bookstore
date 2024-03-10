@@ -6,16 +6,21 @@ import reportWebVitals from './reportWebVitals';
 import 'font-awesome/css/font-awesome.min.css';
 import CategoryContext from "./context/CategoryContext";
 import CartContext from "./context/CartContext";
+import OrderDetailsContext from "./context/OrderDetailsContext";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+<OrderDetailsContext>
     <CategoryContext>
         <CartContext>
             <App />
         </CartContext>
-    </CategoryContext>,
+    </CategoryContext>
+</OrderDetailsContext>,
+
 );
 
 // If you want to start measuring performance in your app, pass a function

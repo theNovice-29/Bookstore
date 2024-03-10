@@ -93,10 +93,34 @@ export interface Order {
   customerId: number;
 }
 
+export interface LineItem {
+  bookId: number;
+  orderId: number;
+  quantity: number;
+}
+export interface Customer {
+  customerName: string;
+  address: string;
+  phone: string;
+  email: string;
+  ccNumber: string;
+  ccExpDate: number;
+}
+
+export interface BookItemNew {
+  bookId: number;
+  book: any;
+  title: string;
+  author: string;
+  price: number;
+  isPublic: boolean;
+}
+
 export interface OrderDetails {
   order: Order;
-  customer: CustomerForm;
-  books: BookItem[];
+  customer: Customer;
+  books: BookItemNew[];
+  lineItems: LineItem[];
 }
 
 export interface ServerErrorResponse {

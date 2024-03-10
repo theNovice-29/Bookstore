@@ -5,9 +5,8 @@ import business.book.Book;
 import business.book.BookDao;
 import business.category.Category;
 import business.category.CategoryDao;
-import business.order.OrderDetails;
-import business.order.OrderForm;
-import business.order.OrderService;
+import business.customer.CustomerDao;
+import business.order.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.Context;
@@ -21,8 +20,12 @@ public class ApiResource {
 
     private final BookDao bookDao = ApplicationContext.INSTANCE.getBookDao();
     private final CategoryDao categoryDao = ApplicationContext.INSTANCE.getCategoryDao();
-
+    private final OrderDao orderDao = ApplicationContext.INSTANCE.getOrderDao();
+    private final LineItemDao lineItemDao = ApplicationContext.INSTANCE.getLineItemDao();
+    private final CustomerDao customerDao = ApplicationContext.INSTANCE.getCustomerDao();
     private final OrderService orderService = ApplicationContext.INSTANCE.getOrderService();
+
+
     @GET
     @Path("categories")
     @Produces(MediaType.APPLICATION_JSON)
@@ -141,14 +144,18 @@ public class ApiResource {
         try {
 
             long orderId = orderService.placeOrder(orderForm.getCustomerForm(), orderForm.getCart());
-            throw new ApiException.ValidationFailure("Transactions have not been implemented yet.");
-
-            // NOTE: MORE CODE PROVIDED NEXT PROJECT
+            System.out.println(orderId);
+            if (orderId > 0) {
+                return orderService.getOrderDetails(orderId);
+            } else {
+                throw new ApiException.ValidationFailure("Unknown error occurred");
+            }
 
         } catch (ApiException e) {
             // NOTE: all validation errors go through here
             throw e;
         } catch (Exception e) {
+            e.printStackTrace();
             throw new ApiException("order placement failed", e);
         }
     }
